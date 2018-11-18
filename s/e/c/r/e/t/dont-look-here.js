@@ -50,6 +50,7 @@ function login() {
   password = prompt ("אנא הזן סיסמה.");
   if (password == ".") {
     alert (".סיסמה נכונה. ברוך הבא, אילון");
+    document.write("<center>Patience is the key.</center>");
   } else {
     alert (".סיסמה שגויה. אנא מחק את הזיכרון שלך כדי שתשכח שהאתר הזה קיים. תודה");
     window.location = "../../../../../../treasure-hunt.html";
