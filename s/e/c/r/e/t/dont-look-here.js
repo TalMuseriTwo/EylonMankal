@@ -17,6 +17,35 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function login() {
   password = prompt ("אנא הזן סיסמה.");
   if (password == ".") {
