@@ -23,5 +23,6 @@ function login() {
     alert (".סיסמה נכונה. ברוך הבא, אילון");
   } else {
     alert (".סיסמה שגויה. אנא מחק את הזיכרון שלך כדי שתשכח שהאתר הזה קיים. תודה");
+    window.location = "mankal.eyylona.tk/treasure-hunt.html";
   }
 }
