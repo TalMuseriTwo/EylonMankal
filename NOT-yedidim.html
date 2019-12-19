@@ -72,6 +72,7 @@ function sendstuff() {
 	document.execCommand("copy");
 	//reset textbox value after copying
 	document.getElementById("copytxt").value = "EPIC EASTER EGG";
+	document.getElementById("phone").select();
 	//sending to whatsapp or something idk
 	var msg = "n/a";
 	if ((document.getElementById("universe_dropdown").value == "uni7") || (document.getElementById("universe_dropdown").value == "wynncraft")) {
@@ -80,9 +81,9 @@ function sendstuff() {
 		msg = universe + "\n" + "*סיוע " + assistance + "*" + "\n" + notes;
 	}
 	var uri = "whatsapp://send?text=" + encode(msg);
-	alert(uri);
+	//alert(uri);
 	console.log(uri);
-	//window.location = uri;
+	window.location = uri;
 	
 }
 </script>
