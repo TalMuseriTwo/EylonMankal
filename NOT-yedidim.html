@@ -1,0 +1,125 @@
+<title>NOT yedidim</title>
+<head dir='rtl'><center><font face='Arial' size=16>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.patience {
+	border-color: #ffffff;
+	border-width: 0;
+	border: none;
+	color: #ffffff;
+}
+# Epic reference
+</style>
+<script>
+/*
+CODE FROM https://meyerweb.com/eric/tools/dencoder/
+Slightly modified
+*/
+
+function encode(unencoded) {
+	//var obj = document.getElementById('dencoder');
+	//var unencoded = obj.value;
+	yes = encodeURIComponent(unencoded).replace(/'/g,"%27").replace(/"/g,"%22");	
+	return yes;
+}
+
+/*
+END OF CODE SNIPPET
+*/
+
+function setuniverse() {
+	switch(document.getElementById("universe_dropdown").value) {
+		case "uni1":
+			return "יקום 1";
+			break;
+		case "uni2":
+			return "יקום 2";
+			break;
+		case "uni3":
+			return "יקום 3";
+			break;
+		case "uni 7":
+			return "יקום 7";
+			break;
+		case "uni53":
+			return "יקום 53";
+			break;
+		case "uni67":
+			return "יקום 67";
+			break;
+		case "uni101":
+			return "יקום 101";
+			break;
+		case "wynncraft":
+			return "מוקד ווינקראפט";
+			break;
+		default:
+			return "n/a";
+			break;
+	}
+}
+
+function sendstuff() {
+	universe = setuniverse();
+	area = document.getElementById("area").value;
+	assistance = document.getElementById("assistance").value;
+	name = document.getElementById("name").value;
+	phone = document.getElementById("phone").value;
+	notes = document.getElementById("notes").value;
+	//copying to clipboard
+	document.getElementById("copytxt").value = name + " " + phone;
+	document.getElementById("copytxt").select();
+	document.execCommand("copy");
+	//reset textbox value after copying
+	document.getElementById("copytxt").value = "EPIC EASTER EGG";
+	//sending to whatsapp or something idk
+	var msg = "n/a";
+	if ((document.getElementById("universe_dropdown").value == "uni7") || (document.getElementById("universe_dropdown").value == "wynncraft")) {
+		msg = universe + " איזור " + area + "\n" + "*סיוע " + assistance + "*" + "\n" + notes;
+	} else {
+		msg = universe + "\n" + "*סיוע " + assistance + "*" + "\n" + notes;
+	}
+	var uri = "whatsapp://send?text=" + encode(msg);
+	alert(uri);
+	console.log(uri);
+	//window.location = uri;
+	
+}
+</script>
+*לא* ידידים
+<hr>
+</font></center></head>
+<body dir='rtl'><font face="Arial" size=4>
+יקום:
+<select id="universe_dropdown">
+<option value="uni1">יקום 1 (היקום האפל)</option>
+<option value="uni2">יקום 2 (יקום המסע בזמן לעבר)</option>
+<option value="uni3">יקום 3 (יקום המסע בזמן לעתיד)</option>
+<option value="uni7">יקום 7 (היקום שלנו)</option>
+<option value="uni53">יקום 53 (יקום האבות האבודים)</option>
+<option value="uni67">יקום 67</option>
+<option value="uni101">יקום 101 (מגדלי האילונים)</option>
+<option value="wynncraft">Wynncraft</option>
+</select>
+<br><br>
+איזור:
+<input type="text" id="area">
+<br>
+<font size=2>יש צורך לכתוב איזור רק אם בחרתם ביקום 7 או בווינקראפט</font>
+<br><br>
+סיוע:
+<input type="text" id="assistance">
+<br><br>
+שם:
+<input type="text" id="name">
+<br><br>
+טלפון:
+<input type="text" id="phone">
+<br><br>
+הערות:
+<input type="text" id="notes">
+<br>--------------------<br>
+<button onclick="sendstuff()">שלח</button>
+<br>
+<input type="text" id="copytxt" value="EPIC EASTER EGG" class="patience">
+</font></body>
